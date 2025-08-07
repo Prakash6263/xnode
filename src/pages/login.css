@@ -1,0 +1,109 @@
+/* Enhanced Password toggle button styles */
+.position-relative {
+  position: relative;
+}
+
+.password-toggle-btn {
+  position: absolute;
+  right: 15px;
+  top: 38px;
+  background: none;
+  border: none;
+  color: #6c757d;
+  cursor: pointer;
+  padding: 8px;
+  z-index: 10;
+  transition: all 0.3s ease;
+  border-radius: 4px;
+}
+
+.password-toggle-btn:hover {
+  color: #495057 !important;
+  background-color: rgba(0, 0, 0, 0.05) !important;
+}
+
+.password-toggle-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+.password-toggle-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.password-toggle-btn i {
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+/* Form control padding adjustment for icon */
+.form-control {
+  padding-right: 50px !important;
+}
+
+/* Enhanced form styling */
+.form-group {
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.form-control {
+  height: 50px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  padding: 12px 15px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+/* Loading state styles */
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Eye icon specific styles */
+.fa-eye,
+.fa-eye-slash {
+  color: #6c757d;
+  font-size: 18px;
+}
+
+.password-toggle-btn:hover .fa-eye,
+.password-toggle-btn:hover .fa-eye-slash {
+  color: #007bff;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .password-toggle-btn {
+    right: 12px;
+    top: 36px;
+    padding: 6px;
+  }
+
+  .form-control {
+    padding-right: 45px !important;
+  }
+}
+
+/* Dark theme adjustments for login page */
+.login-30 .password-toggle-btn {
+  color: #adb5bd;
+}
+
+.login-30 .password-toggle-btn:hover {
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* .login-30 .password-toggle-btn:hover .fa-eye,
+.login-30 .password-toggle-btn:hover .fa-eye-slash {
+  color: #fff;
+} */

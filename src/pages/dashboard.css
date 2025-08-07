@@ -1,0 +1,58 @@
+/* Dashboard Card Styles */
+.card-purple {
+  background-color: #8a2be2; /* Purple */
+  color: white;
+}
+
+.card-blue {
+  background-color: #007bff; /* Blue */
+  color: white;
+}
+
+.card-pink {
+  background-color: #e83e8c; /* Pink */
+  color: white;
+}
+
+.card-green {
+  background-color: #28a745; /* Green */
+  color: white;
+}
+
+.dash-widget-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.dash-widget-icon {
+  font-size: 2.5rem;
+  opacity: 0.8;
+}
+
+.dash-count {
+  text-align: right;
+}
+
+.dash-title {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.dash-counts p {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+/* Chart Container */
+#sales_chart_canvas {
+  width: 100% !important;
+  height: 300px !important; /* Fixed height for responsiveness */
+}
+
+/* Loading Spinner */
+.spinner-border {
+  width: 3rem;
+  height: 3rem;
+}
