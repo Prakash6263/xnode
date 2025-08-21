@@ -4,18 +4,20 @@ import { useState, useEffect } from "react"
 import { authUtils } from "../utils/auth"
 
 export const useAuth = () => {
-  const [user, setUser] = useState(null)
+  const [admin, setAdmin] = useState(null)
   const [isAuthenticated, setIsAuthenticated] = useState(false)
   const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
     const checkAuth = () => {
-      const storedUser = authUtils.getStoredUser()
-      if (storedUser) {
-        setUser(storedUser)
+      const token = authUtils.getToken()
+      const storedAdmin = authUtils.getStoredUser()
+
+      if (token && storedAdmin) {
+        setAdmin(storedAdmin.admin)
         setIsAuthenticated(true)
       } else {
-        setUser(null)
+        setAdmin(null)
         setIsAuthenticated(false)
       }
       setIsLoading(false)
@@ -34,16 +36,26 @@ export const useAuth = () => {
     return () => window.removeEventListener("storage", handleStorageChange)
   }, [])
 
+  const login = (loginResponse) => {
+    // Store the complete login response
+    const rememberMe = false // You can add this as parameter if needed
+    authUtils.storeUser(loginResponse, rememberMe)
+    setAdmin(loginResponse.admin)
+    setIsAuthenticated(true)
+  }
+
   const logout = () => {
     authUtils.logout()
-    setUser(null)
+    setAdmin(null)
     setIsAuthenticated(false)
   }
 
   return {
-    user,
+    admin,
     isAuthenticated,
     isLoading,
+    login,
     logout,
+    token: authUtils.getToken(),
   }
 }

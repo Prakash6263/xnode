@@ -17,8 +17,7 @@ const Login = () => {
   const navigate = useNavigate()
 
   useEffect(() => {
-    const adminData = authUtils.getStoredUser()
-    if (adminData) {
+    if (authUtils.isAuthenticated()) {
       navigate("/dashboard")
     }
   }, [navigate])
@@ -57,25 +56,17 @@ const Login = () => {
       })
 
       if (result.success) {
-        // Store complete admin data using email as identifier
         const adminData = {
           ...result.data,
           loginTime: new Date().toISOString(),
         }
 
-        if (formData.rememberMe) {
-          localStorage.setItem("adminUser", JSON.stringify(adminData))
-          localStorage.setItem("adminEmail", result.data.email)
-        } else {
-          sessionStorage.setItem("adminUser", JSON.stringify(adminData))
-          sessionStorage.setItem("adminEmail", result.data.email)
-        }
+        authUtils.storeUser(adminData, formData.rememberMe)
 
-        // Show success message
         Swal.fire({
           icon: "success",
           title: "Login Successful!",
-          text: `Welcome back, ${result.data.email}`,
+          text: `Welcome back, ${result.data.admin.full_name}`,
           timer: 2000,
           showConfirmButton: false,
         }).then(() => {

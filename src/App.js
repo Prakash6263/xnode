@@ -16,18 +16,29 @@ import InvoiceDetails from "./pages/InvoiceDetails"
 import KnowledgeBase from "./pages/KnowledgeBase"
 import Notifications from "./pages/Notifications"
 import ProtectedRoute from "./components/ProtectedRoute"
+import PublicRoute from "./components/PublicRoute"
 
 function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/login" element={<Login />} />
+        {/* Public route - redirects to dashboard if already logged in */}
+        <Route
+          path="/login"
+          element={
+            <PublicRoute>
+              <Login />
+            </PublicRoute>
+          }
+        />
+
+        {/* Protected routes - requires authentication */}
         <Route
           path="/"
           element={
-            // <ProtectedRoute>
+            <ProtectedRoute>
               <Layout />
-            /* </ProtectedRoute> */
+            </ProtectedRoute>
           }
         >
           <Route index element={<Dashboard />} />

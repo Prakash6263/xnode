@@ -1,4 +1,3 @@
-// API service for authentication
 const API_BASE_URL = "https://aitechnotech.in/xnode/admin"
 
 export const authAPI = {
@@ -18,18 +17,25 @@ export const authAPI = {
 
       const data = await response.json()
 
-      if (!response.ok) {
-        throw new Error(data.message || "Login failed")
-      }
-
-      return {
-        success: true,
-        data: data,
+      if (data.status === "1") {
+        return {
+          success: true,
+          data: {
+            token: data.token,
+            admin: data.admin,
+            message: data.message,
+          },
+        }
+      } else {
+        return {
+          success: false,
+          error: data.message || "Login failed",
+        }
       }
     } catch (error) {
       return {
         success: false,
-        error: error.message || "Network error occurred",
+        error: "Network error occurred",
       }
     }
   },
