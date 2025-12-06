@@ -4,6 +4,10 @@ import { useEffect, useState } from "react"
 import { ethers } from "ethers" // Import ethers.js
 import { authUtils } from "../utils/auth"
 import { Link } from "react-router-dom" // Import Link for navigation
+import logo from "../assets/img/logo.png";
+import logoSmall from "../assets/img/logo-small.png";
+import searchIcon from "../assets/img/icons/search.svg";
+import avatar07 from "../assets/img/profiles/avatar-07.jpg";
 const Navbar = () => {
   const [connectedWalletAddress, setConnectedWalletAddress] = useState(null)
   const [walletBalance, setWalletBalance] = useState("0.00") // State for wallet balance
@@ -101,30 +105,30 @@ const Navbar = () => {
     console.log("Logging out...")
     const logoutEvent = authUtils.logout()
     if (logoutEvent) {
-      window.location.href = "/login"
+      window.location.to = "/login"
     }
   }
   return (
     <div className="header header-one">
-      <a
-        href="/dashboard"
+      <Link
+        to="/dashboard"
         className="d-inline-flex d-sm-inline-flex align-items-center d-md-inline-flex d-lg-none align-items-center device-logo"
       >
-        <img src="assets/img/logo.png" className="img-fluid logo2" alt="Logo" style={{ width: "150px" }} />
-      </a>
+        <img src={logo} className="img-fluid logo2" alt="Logo" style={{ width: "150px" }} />
+      </Link>
       <div className="main-logo d-inline float-start d-lg-flex align-items-center d-none d-sm-none d-md-none">
         <div className="logo-color">
-          <a href="/dashboard">
-            <img src="assets/img/logo.png" className="img-fluid logo-blue" alt="Logo" style={{ width: "150px" }} />
-          </a>
-          <a href="/dashboard">
+          <Link to="/dashboard">
+            <img src={logo} className="img-fluid logo-blue" alt="Logo" style={{ width: "150px" }} />
+          </Link>
+          <Link to="/dashboard">
             <img
-              src="assets/img/logo-small.png"
+              src={logoSmall}
               className="img-fluid logo-small"
               alt="Logo"
               style={{ width: "80px" }}
             />
-          </a>
+          </Link>
         </div>
       </div>
 
@@ -133,15 +137,15 @@ const Navbar = () => {
         <form>
           <input type="text" className="form-control" placeholder="Search here" />
           <button className="btn" type="submit">
-            <img src="assets/img/icons/search.svg" alt="img" />
+            <img src={searchIcon} alt="img" />
           </button>
         </form>
       </div>
 
       {/* Mobile Menu Toggle */}
-      <a className="mobile_btn" id="mobile_btn">
+      <Link className="mobile_btn" id="mobile_btn">
         <i className="fas fa-bars"></i>
-      </a>
+      </Link>
 
       {/* Header Menu */}
       <ul className="nav nav-tabs user-menu">
@@ -167,16 +171,16 @@ const Navbar = () => {
 
         {/* User Menu */}
         <li className="nav-item dropdown">
-          <a href="javascript:void(0)" className="user-link nav-link" data-bs-toggle="dropdown">
+          <Link to="javascript:void(0)" className="user-link nav-link" data-bs-toggle="dropdown">
             <span className="user-img">
-              <img src="assets/img/profiles/avatar-07.jpg" alt="img" className="profilesidebar" />
+              <img src={avatar07} alt="img" className="profilesidebar" />
               <span className="animate-circle"></span>
             </span>
             <span className="user-content">
               <span className="user-details">Admin</span>
               <span className="user-name">John Smith</span>
             </span>
-          </a>
+          </Link>
           <div className="dropdown-menu menu-drop-user">
             <div className="profilemenu">
               <div className="subscription-logout">

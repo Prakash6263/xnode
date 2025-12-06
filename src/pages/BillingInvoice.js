@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect } from "react"
-
+import { Link } from "react-router-dom"
 const BillingInvoice = () => {
   useEffect(() => {
     // Initialize DataTable after component mounts
@@ -60,9 +60,9 @@ const BillingInvoice = () => {
                       </td>
                       <td>Yes</td>
                       <td>
-                        <a href="/invoice-details" className="btn btn-sm btn-primary text-white">
+                        <Link to="/invoice-details" className="btn btn-sm btn-primary text-white">
                           <i className="bi bi-eye"></i>
-                        </a>
+                        </Link>
                       </td>
                     </tr>
                     <tr>
@@ -77,9 +77,9 @@ const BillingInvoice = () => {
                       </td>
                       <td>No</td>
                       <td>
-                        <a href="/invoice-details" className="btn btn-sm btn-primary text-white">
+                        <Link to="/invoice-details" className="btn btn-sm btn-primary text-white">
                           <i className="bi bi-eye"></i>
-                        </a>
+                        </Link>
                       </td>
                     </tr>
                     <tr>
@@ -94,9 +94,9 @@ const BillingInvoice = () => {
                       </td>
                       <td>Yes</td>
                       <td>
-                        <a href="/invoice-details" className="btn btn-sm btn-primary text-white">
+                        <Link to="/invoice-details" className="btn btn-sm btn-primary text-white">
                           <i className="bi bi-eye"></i>
-                        </a>
+                        </Link>
                       </td>
                     </tr>
                     <tr>
@@ -111,9 +111,9 @@ const BillingInvoice = () => {
                       </td>
                       <td>No</td>
                       <td>
-                        <a href="/invoice-details" className="btn btn-sm btn-primary text-white">
+                        <Link to="/invoice-details" className="btn btn-sm btn-primary text-white">
                           <i className="bi bi-eye"></i>
-                        </a>
+                        </Link>
                       </td>
                     </tr>
                     <tr>
@@ -128,9 +128,9 @@ const BillingInvoice = () => {
                       </td>
                       <td>Yes</td>
                       <td>
-                        <a href="/invoice-details" className="btn btn-sm btn-primary text-white">
+                        <Link to="/invoice-details" className="btn btn-sm btn-primary text-white">
                           <i className="bi bi-eye"></i>
-                        </a>
+                        </Link>
                       </td>
                     </tr>
                     <tr>
@@ -145,9 +145,9 @@ const BillingInvoice = () => {
                       </td>
                       <td>No</td>
                       <td>
-                        <a href="/invoice-details" className="btn btn-sm btn-primary text-white">
+                        <Link to="/invoice-details" className="btn btn-sm btn-primary text-white">
                           <i className="bi bi-eye"></i>
-                        </a>
+                        </Link>
                       </td>
                     </tr>
                     <tr>
@@ -162,9 +162,9 @@ const BillingInvoice = () => {
                       </td>
                       <td>Yes</td>
                       <td>
-                        <a href="/invoice-details" className="btn btn-sm btn-primary text-white">
+                        <Link to="/invoice-details" className="btn btn-sm btn-primary text-white">
                           <i className="bi bi-eye"></i>
-                        </a>
+                        </Link>
                       </td>
                     </tr>
                     <tr>
@@ -179,9 +179,9 @@ const BillingInvoice = () => {
                       </td>
                       <td>Yes</td>
                       <td>
-                        <a href="/invoice-details" className="btn btn-sm btn-primary text-white">
+                        <Link to="/invoice-details" className="btn btn-sm btn-primary text-white">
                           <i className="bi bi-eye"></i>
-                        </a>
+                        </Link>
                       </td>
                     </tr>
                     <tr>
@@ -196,9 +196,9 @@ const BillingInvoice = () => {
                       </td>
                       <td>No</td>
                       <td>
-                        <a href="/invoice-details" className="btn btn-sm btn-primary text-white">
+                        <Link to="/invoice-details" className="btn btn-sm btn-primary text-white">
                           <i className="bi bi-eye"></i>
-                        </a>
+                        </Link>
                       </td>
                     </tr>
                     <tr>
@@ -213,9 +213,9 @@ const BillingInvoice = () => {
                       </td>
                       <td>Yes</td>
                       <td>
-                        <a href="/invoice-details" className="btn btn-sm btn-primary text-white">
+                        <Link to="/invoice-details" className="btn btn-sm btn-primary text-white">
                           <i className="bi bi-eye"></i>
-                        </a>
+                        </Link>
                       </td>
                     </tr>
                   </tbody>

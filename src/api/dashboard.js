@@ -2,7 +2,7 @@
 
 import { authUtils } from "../utils/auth" // ⬅️ Add this import
 
-const API_BASE_URL = "https://aitechnotech.in/xnode/admin"
+const API_BASE_URL = "https://xnodecloud.com/api/xnode/admin"
 
 export const dashboardAPI = {
   getDashboardStats: async () => {

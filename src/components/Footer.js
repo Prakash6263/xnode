@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 const Footer = () => {
   return (
     <div className="footer">
@@ -6,7 +7,7 @@ const Footer = () => {
           <div className="col-md-6 col-lg-6">
             <div className="footer-copyright">
               <p className="mb-0">
-                <a href="templateshub.net">Templates Hub</a>
+                <Link href="templateshub.net">Templates Hub</Link>
               </p>
             </div>
           </div>

@@ -1,4 +1,4 @@
-const API_BASE_URL = "https://aitechnotech.in/xnode/admin"
+const API_BASE_URL = "https://xnodecloud.com/api/xnode/admin"
 
 export const authAPI = {
   login: async (credentials) => {

@@ -1,0 +1,10 @@
+.dataTables_wrapper .dataTables_length {
+  display: flex !important;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+#saleTypeFilter {
+  margin-left: 10px;
+}

@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import { Link } from "react-router-dom"
 
 const KnowledgeBase = () => {
   const [showModal, setShowModal] = useState(false)
@@ -65,23 +66,23 @@ const KnowledgeBase = () => {
             <ul className="filter-list">
               <li>
                 <div className="dropdown dropdown-action" data-bs-placement="bottom">
-                  <a href="#" className="btn btn-primary" data-bs-toggle="dropdown" aria-expanded="false">
+                  <Link to="#" className="btn btn-primary" data-bs-toggle="dropdown" aria-expanded="false">
                     <span>
                       <i className="fe fe-download me-2"></i>
                     </span>
                     Downloads
-                  </a>
+                  </Link>
                   <div className="dropdown-menu dropdown-menu-end">
                     <ul className="d-block">
                       <li>
-                        <a className="d-flex align-items-center download-item" href="#" download="">
+                        <Link className="d-flex align-items-center download-item" to="#" download="">
                           <i className="far fa-file-text me-2"></i>EXCEL
-                        </a>
+                        </Link>
                       </li>
                       <li>
-                        <a className="d-flex align-items-center download-item" href="#" download="">
+                        <Link className="d-flex align-items-center download-item" to="#" download="">
                           <i className="far fa-file-pdf me-2"></i>PDF
-                        </a>
+                        </Link>
                       </li>
                     </ul>
                   </div>

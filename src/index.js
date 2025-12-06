@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './App'; // Your main App component where BrowserRouter is likely defined
+import './index.css';
 
+import App from './App'; // Your main App component where BrowserRouter is likely defined
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

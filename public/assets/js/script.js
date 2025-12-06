@@ -810,34 +810,39 @@ Version      : 1.0
 		});
 	}	
 	
-	$(document).ready(function(){
-		$(document).on('click', '#sidebar-size-compact', function() {
-			$('html').attr("data-layout", "vertical");
-		});
-		$(document).on('click', '#sidebar-size-small-hover', function() {
-			$('html').attr("data-layout", "vertical");
-		});
-		$(document).on('click', '[data-layout=horizontal] #sidebar-size-compact', function() {
-			$('html').attr("data-layout", "vertical");
-		});
-		$(document).on('click', '[data-layout=horizontal] #sidebar-size-small-hover', function() {
-			$('html').attr("data-layout", "vertical");
-		});
-		$(document).on('click', '.colorscheme-cardradio input[type=radio]', function() {
-			$("html").removeAttr("data-topbar");
-		});
-		$(document).on('click', '.viewmoremenu', function() {
-			$(".hidden-links").toggleClass("hidden");
-		});
-		$(document).on('click', '[data-sidebar-size=sm-hover] #customizer-layout03', function() {
-			$("html").removeAttr("data-layout-mode");
-		});
-		$(document).on('click', '.greedy .list-inline-item .submenu a', function() {
-			$(".hidden-links").addClass("hidden");
-		});
+$(document).ready(function(){
+    $(document).on('click', '#sidebar-size-compact', function() {
+        $('html').attr("data-layout", "vertical");
+    });
+    $(document).on('click', '#sidebar-size-small-hover', function() {
+        $('html').attr("data-layout", "vertical");
+    });
+    $(document).on('click', '[data-layout=horizontal] #sidebar-size-compact', function() {
+        $('html').attr("data-layout", "vertical");
+    });
+    $(document).on('click', '[data-layout=horizontal] #sidebar-size-small-hover', function() {
+        $('html').attr("data-layout", "vertical");
+    });
+    $(document).on('click', '.colorscheme-cardradio input[type=radio]', function() {
+        $("html").removeAttr("data-topbar");
+    });
+    $(document).on('click', '.viewmoremenu', function() {
+        $(".hidden-links").toggleClass("hidden");
+    });
+    $(document).on('click', '[data-sidebar-size=sm-hover] #customizer-layout03', function() {
+        $("html").removeAttr("data-layout-mode");
+    });
+    $(document).on('click', '.greedy .list-inline-item .submenu a', function() {
+        $(".hidden-links").addClass("hidden");
+    });
 
-		document.getElementsByClassName("main-wrapper")[0].style.visibility = "visible";
-	});
+    // FIX: Only set visibility if element exists
+    var mainWrapper = document.getElementsByClassName("main-wrapper")[0];
+    if (mainWrapper) {
+        mainWrapper.style.visibility = "visible";
+    }
+});
+
 
 
     $('ul.user-menu li a.toggle-switch').parent().css('display','none');

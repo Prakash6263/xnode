@@ -137,7 +137,7 @@ const Notifications = () => {
             {/* <h3 className="page-title">Notifications & Logs</h3> */}
             <ul className="breadcrumb">
               {/* <li className="breadcrumb-item">
-                <a href="/dashboard">Dashboard</a>
+                <Link href="/dashboard">Dashboard</a>
               </li> */}
               <li className="breadcrumb-item active">Notifications</li>
             </ul>

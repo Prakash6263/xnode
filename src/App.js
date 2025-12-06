@@ -18,9 +18,13 @@ import Notifications from "./pages/Notifications"
 import ProtectedRoute from "./components/ProtectedRoute"
 import PublicRoute from "./components/PublicRoute"
 
+import AddNode from "./pages/AddNode"
+import EditNode from "./pages/EditNode"
+import Nodes from "./pages/Nodes"
+
 function App() {
   return (
-    <Router>
+    <Router >
       <Routes>
         {/* Public route - redirects to dashboard if already logged in */}
         <Route
@@ -56,6 +60,11 @@ function App() {
           <Route path="promotions-coupons" element={<PromotionsCoupons />} />
           <Route path="staff-admin" element={<StaffAdmin />} />
           <Route path="notifications" element={<Notifications />} />
+          <Route path="add-node" element={<AddNode />} />
+          <Route path="edit-node" element={<EditNode />} />
+          <Route path="nodes" element={<Nodes />} />
+
+
         </Route>
       </Routes>
     </Router>

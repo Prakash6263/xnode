@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-
+import { Link } from "react-router-dom"
 const AddUser = () => {
   const [formData, setFormData] = useState({
     firstName: "",
@@ -47,9 +47,9 @@ const AddUser = () => {
           <div className="list-btn" style={{ justifySelf: "end" }}>
             <ul className="filter-list">
               <li>
-                <a className="btn btn-primary" href="/user-list">
+                <Link className="btn btn-primary" to="/user-list">
                   <i className="fa fa-eye me-2"></i>View All
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

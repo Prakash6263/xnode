@@ -237,37 +237,39 @@ const Sidebar = () => {
               </Link>
             </li>
 
+
             <li style={{ marginBottom: "2px" }}>
               <Link
-                to="/support-tickets"
-                className={isActive("/support-tickets")}
+                to="/nodes"
+                className={isActive("/nodes")}
                 style={{
                   display: "flex",
                   alignItems: "center",
                   padding: "12px 20px",
-                  color: location.pathname === "/support-tickets" ? "#fff" : "#bdc3c7",
+                  color: location.pathname === "/nodes" ? "#fff" : "#bdc3c7",
                   textDecoration: "none",
-                  backgroundColor: location.pathname === "/support-tickets" ? "#3498db" : "transparent",
-                  borderLeft: location.pathname === "/support-tickets" ? "3px solid #2980b9" : "3px solid transparent",
+                  backgroundColor: location.pathname === "/nodes" ? "#3498db" : "transparent",
+                  borderLeft: location.pathname === "/nodes" ? "3px solid #2980b9" : "3px solid transparent",
                   transition: "all 0.3s ease",
                 }}
                 onMouseEnter={(e) => {
-                  if (location.pathname !== "/support-tickets") {
+                  if (location.pathname !== "/nodes") {
                     e.target.style.backgroundColor = "#34495e"
                     e.target.style.color = "#fff"
                   }
                 }}
                 onMouseLeave={(e) => {
-                  if (location.pathname !== "/support-tickets") {
+                  if (location.pathname !== "/nodes") {
                     e.target.style.backgroundColor = "transparent"
                     e.target.style.color = "#bdc3c7"
                   }
                 }}
               >
-                <i className="fa fa-ticket" style={{ marginRight: "10px", fontSize: "16px" }}></i>
-                <span>Support & Tickets</span>
+                <i className="fa fa-server" style={{ marginRight: "10px", fontSize: "16px" }}></i>
+                <span>Nodes</span>
               </Link>
             </li>
+
 
             {/* <li style={{ marginBottom: "2px" }}>
               <Link

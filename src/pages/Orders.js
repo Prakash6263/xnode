@@ -195,13 +195,19 @@ const Orders = () => {
                           <span className={getPaymentStatusBadgeClass(order.provisioning)}>{order.provisioning}</span>
                         </td>
                         <td>
-                          <button
-                            className="btn btn-sm btn-primary"
-                            onClick={() => openAssignModal(order)}
-                            title="Assign Server"
-                          >
-                            <i className="bi bi-server"></i> Assign Server
-                          </button>
+                          {order.assigned ? (
+                            <span className="badge bg-success">
+                              <i className="bi bi-check-circle"></i> Assigned
+                            </span>
+                          ) : (
+                            <button
+                              className="btn btn-sm btn-primary"
+                              onClick={() => openAssignModal(order)}
+                              title="Assign Server"
+                            >
+                              <i className="bi bi-server"></i> Assign Server
+                            </button>
+                          )}
                         </td>
                       </tr>
                     ))}
@@ -360,3 +366,4 @@ const Orders = () => {
 }
 
 export default Orders
+

@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react"
 import { usersAPI } from "../api/users"
 import Swal from "sweetalert2" // Import SweetAlert
-
+import { Link } from "react-router-dom"
 const UserList = () => {
   const [showModal, setShowModal] = useState(false)
   const [users, setUsers] = useState([])
@@ -148,32 +148,33 @@ const UserList = () => {
             <ul className="filter-list">
               <li>
                 <div className="dropdown dropdown-action" data-bs-placement="bottom">
-                  <a href="#" className="btn btn-primary" data-bs-toggle="dropdown" aria-expanded="false">
+                  {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+                  <Link to="#" className="btn btn-primary" data-bs-toggle="dropdown" aria-expanded="false">
                     <span>
                       <i className="fe fe-download me-2"></i>
                     </span>{" "}
                     Downloads
-                  </a>
+                  </Link>
                   <div className="dropdown-menu dropdown-menu-end">
                     <ul className="d-block">
                       <li>
-                        <a className="d-flex align-items-center download-item" href="#" download="">
+                        <Link className="d-flex align-items-center download-item" to="#" download="">
                           <i className="far fa-file-text me-2"></i>EXCEL
-                        </a>
+                        </Link>
                       </li>
                       <li>
-                        <a className="d-flex align-items-center download-item" href="#" download="">
+                        <Link className="d-flex align-items-center download-item" to="#" download="">
                           <i className="far fa-file-pdf me-2"></i>PDF
-                        </a>
+                        </Link>
                       </li>
                     </ul>
                   </div>
                 </div>
               </li>
               <li>
-                {/* <a className="btn btn-primary" href="/add-user">
+                {/* <Link className="btn btn-primary" to="/add-user">
                   <i className="fa fa-plus-circle me-2"></i>Add New
-                </a> */}
+                </Link> */}
               </li>
             </ul>
           </div>
@@ -298,9 +299,9 @@ const UserList = () => {
                 <p className="mb-2">
                   Status: <span className={getKycBadgeClass(selectedUser.kyc)}>{selectedUser.kyc}</span>
                 </p>
-                {/* <a href="#" className="btn btn-outline-primary btn-sm">
+                {/* <Link to="#" className="btn btn-outline-primary btn-sm">
                   <i className="bi bi-file-earmark-text"></i> View Uploaded Documents
-                </a> */}
+                </Link> */}
               </div>
               <div className="modal-footer">
                 {selectedUser.status === "Active" ? (
