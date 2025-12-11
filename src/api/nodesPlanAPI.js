@@ -22,6 +22,29 @@ const nodesPlanAPI = {
       return { success: false, error: e.message || "Network error" }
     }
   },
+async deletePlan(id) {
+    const headers = authUtils.getToken()
+      ? { Authorization: `Bearer ${authUtils.getToken()}`, Accept: "application/json" }
+      : null
+    if (!headers) return { success: false, error: "Authentication token not found." }
+
+    try {
+      // FIX 1: Removed extra '/admin' from URL (API_BASE_URL already includes it)
+      // FIX 2: Changed method to DELETE (Standard REST)
+      const res = await fetch(`${API_BASE_URL}/node-plans/${id}`, {
+        method: "DELETE", 
+        headers,
+      })
+      const data = await res.json()
+      if (!res.ok) throw new Error(data.message || `HTTP ${res.status}`)
+
+      return data.status === "1"
+        ? { success: true, data: data }
+        : { success: false, error: data.message }
+    } catch (e) {
+      return { success: false, error: e.message || "Network error" }
+    }
+  },
 
   // POST /admin/node-plans
   async createPlan(formData) {

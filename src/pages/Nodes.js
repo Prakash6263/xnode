@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react"
+import Swal from "sweetalert2"
 import nodesPlanAPI from "../api/nodesPlanAPI" // default export
 
 const NodePlans = () => {
@@ -25,10 +26,56 @@ const NodePlans = () => {
     setLoading(false)
   }
 
+
+
   useEffect(() => {
     fetchPlans()
   }, [])
 
+const handleDelete = async (id) => {
+    // Show confirmation dialog
+    const result = await Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    })
+
+    // If user clicked "Yes"
+    if (result.isConfirmed) {
+      try {
+        const apiResult = await nodesPlanAPI.deletePlan(id)
+        
+        if (apiResult.success) {
+          // Show success message
+          await Swal.fire(
+            'Deleted!',
+            'The node plan has been deleted.',
+            'success'
+          )
+          // Refresh table
+          fetchPlans() 
+        } else {
+          // Show API error
+          Swal.fire(
+            'Error!',
+            apiResult.error || "Failed to delete plan",
+            'error'
+          )
+        }
+      } catch (err) {
+        // Show network/catch error
+        Swal.fire(
+          'Error!',
+          err.message || "Something went wrong",
+          'error'
+        )
+      }
+    }
+  }
   // Initialize DataTable when plans change
   useEffect(() => {
     const initializeDataTable = () => {
@@ -123,6 +170,7 @@ const NodePlans = () => {
                       <th>Weekly Earning</th>
                       <th>Features</th>
                       <th>Status</th>
+                      <th>Action</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -145,6 +193,14 @@ const NodePlans = () => {
                           <td>
                             {plan.is_active ? <span className="text-success">Active</span> : <span className="text-muted">Inactive</span>}
                           </td>
+                          <td>
+                            <button 
+                              type="button" 
+                              className="btn btn-danger" 
+                              onClick={() => handleDelete(plan.id)}
+                            >
+                              Delete
+                            </button>                      </td>
                         </tr>
                       ))
                     ) : (
